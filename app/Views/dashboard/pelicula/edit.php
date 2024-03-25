@@ -6,8 +6,8 @@
     <title>Actualizar pelicula</title>
 </head>
 <body>
-    <form action="/categoria/update/<?= $categoria['id'] ?>" method="post">
-     <?= view('categoria/_form.php',['op'=>'Actualizar'])?>
+    <form action="/dashboard/pelicula/update/<?= $pelicula['id'] ?>" method="post">
+     <?= view('dashboard/pelicula/_form.php',['op'=>'Actualizar'])?>
     </form>
 </body>
 </html>

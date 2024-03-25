@@ -7,7 +7,10 @@ use CodeIgniter\Router\RouteCollection;
  */
 //$routes->get('/', 'Home::index');
 //$routes->get('/pelicula', 'Pelicula::index');
-$routes->presenter('pelicula');
-$routes->presenter('categoria');
+$routes->group('dashboard',function($routes){
+    $routes->presenter('pelicula',['controller'=> 'Dashboard\Pelicula']);
+    $routes->presenter('categoria',['except'=>'show','controller'=> 'Dashboard\Categoria']);
+});
+
 
 
