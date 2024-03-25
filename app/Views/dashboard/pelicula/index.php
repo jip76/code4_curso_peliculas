@@ -6,6 +6,7 @@
     <title>Peliculas</title>
 </head>
 <body>
+    <?= view('partials/_session') ?>
     <h1>Listado de Peliculas</h1>
     <table class="table">
         <a href="/dashboard/pelicula/new">Crear</a>

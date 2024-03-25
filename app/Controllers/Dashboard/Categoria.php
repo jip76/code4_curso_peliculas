@@ -9,6 +9,7 @@ use App\Models\CategoriaModel;
 class Categoria extends BaseController
 {
   public function show($id){
+    
     $categoriaModel = new CategoriaModel();
       echo view('dashboard/categoria/show',[
       'categoria'=>$categoriaModel->find($id)
@@ -29,7 +30,7 @@ class Categoria extends BaseController
     $categoriaModel->insert([
       'titulo'=>$this->request->getPost('titulo'),
     ]);
-   return redirect()->to('/dashboard/categoria');
+   return redirect()->to('/dashboard/categoria')->with('mensaje','Registro gestionado de manera exitosa');
   }
   public function edit($id)
   {
@@ -47,19 +48,19 @@ class Categoria extends BaseController
     $categoriaModel->update($id,[
        'titulo'=>$this->request->getPost('titulo'),
     ]);
-     return redirect()->to('/dashboard/categoria');
+     return redirect()->to('/dashboard/categoria')->with('mensaje','Registro actualizado de manera exitosa');;
   }
 
 public function delete($id)
 {
     $categoriaModel = new CategoriaModel();
     $categoriaModel->delete($id);
-    return redirect()->back();
+    return redirect()->back()->with('mensaje','Registro eliminado de manera exitosa');;
   }
 
     public function index()
     {
-        
+      session()->set('key','value');  
       $categoriaModel = new CategoriaModel();
      
       echo view('dashboard/categoria/index',

@@ -31,7 +31,7 @@ class Pelicula extends BaseController
       'titulo'=>$this->request->getPost('titulo'),
       'descripcion'=>$this->request->getPost('descripcion'),
     ]);
-      return redirect()->to('/dashboard/pelicula');
+      return redirect()->to('/dashboard/pelicula')->with('mensaje','Registro gestionado de manera exitosa');
   }
   public function edit($id)
   {
@@ -50,14 +50,14 @@ class Pelicula extends BaseController
        'titulo'=>$this->request->getPost('titulo'),
        'descripcion'=>$this->request->getPost('descripcion')
     ]);
-    return redirect()->to('/dashboard/pelicula');
+    return redirect()->to('/dashboard/pelicula')->with('mensaje','Registro se actualizo de manera exitosa');
   }
 
 public function delete($id)
 {
     $peliculaModel = new PeliculaModel();
     $peliculaModel->delete($id);
-    return redirect()->back();
+    return redirect()->back()->with('mensaje','Registro se elimino de manera exitosa');
 }
 
     public function index()
