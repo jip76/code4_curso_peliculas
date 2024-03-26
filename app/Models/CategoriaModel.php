@@ -8,5 +8,6 @@ class CategoriaModel extends Model
 {
     protected $table   = 'categoria';
     protected $primaryKey = 'id';
+    protected $returnType ='object';
     protected $allowedFields = ['titulo'];  
 }
