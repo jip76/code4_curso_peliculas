@@ -1,17 +1,10 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Categoria</title>
-</head>
-<body>
-  
-    <h1>Listado de categoria</h1>
-    <table class="table">
-    <?= session('key')?>
-    <?= view('partials/_session') ?>
-        <a href="/dashboard/categoria/new">Crear</a>
+    <?= $this->extend('Layouts/dashboard') ?>
+    <?= $this->section('header')?>
+    Listado de Categorías
+    <?= $this->endSection('')?>
+    <?= $this->section('contenido')?>
+    <a href="/dashboard/categoria/new">Crear</a>
+    <table class="table">     
        
         <tr>
             <th>Id</th>
@@ -34,6 +27,4 @@
                     <tr>
             <?php endforeach ?>
     </table>
-    
-</body>
-</html>
+    <?= $this->endSection()?>
