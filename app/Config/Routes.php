@@ -7,6 +7,15 @@ use CodeIgniter\Router\RouteCollection;
  */
 //$routes->get('/', 'Home::index');
 //$routes->get('/pelicula', 'Pelicula::index');
+
+$routes->group('api',['namespace'=>'App\Controllers\Api'],function($routes){
+
+  $routes->resource('Pelicula');
+  $routes->resource('categoria');
+
+});
+
+
 $routes->group('dashboard',function($routes){
     $routes->presenter('pelicula',['controller'=> 'Dashboard\Pelicula']);
     //$routes->get('usuario/crear','\App\Controllers\Web\Usuario::crear_usuario');
